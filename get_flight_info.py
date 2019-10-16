@@ -9,8 +9,6 @@ import time
 def main():
 	
 	#get_flight_info('A7e8f8')
-
-
 	while(True):
 		flights = flights_in_zone()
 	
@@ -20,20 +18,21 @@ def main():
 		time.sleep(1)
 
 
-
+# Appends flights ICAO present in coordinate space to list
 def flights_in_zone():
 
 	"""
-	top_left = (47.543992, -122.354974)
-	bottom_left = (47.542850, -122.354974)
-	top_right = (47.543992, -122.285442)
-	bottom_right = (47.542850, -122.285442)
-	"""
-
 	top_left = (47.528542, -122.346872)
 	bottom_left = (47.525525, -122.346872)
 	top_right = (47.528542, -122.278043)
 	bottom_right = (47.526126,-122.278043)
+	"""
+
+	top_left = (47.541779, -122.346872)
+	bottom_left = (47.538762, -122.346872)
+	top_right = (47.541779, -122.278043)
+	bottom_right = (47.538762,-122.278043)
+
 
 	"""
 	up/down, left right
@@ -54,7 +53,7 @@ def flights_in_zone():
 	return flights_in_zone
 
 
-
+# Scrapes flight info from FlightAware using ICAO
 def get_flight_info(icao):
 
 	session = HTMLSession()
@@ -86,7 +85,7 @@ def get_flight_info(icao):
 	time.sleep(1)
 
 
-
+# Cleans flight information strings
 def clean_text(text):
 
 	cleaned_text = text.replace('\n', '')
