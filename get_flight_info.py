@@ -3,42 +3,16 @@ import requests
 from requests_html import HTMLSession
 import json
 import time
-
-
-
-def main():
-	
-	#get_flight_info('A7e8f8')
-	while(True):
-		flights = flights_in_zone()
-	
-		if flights:
-			for flight in flights:
-				get_flight_info(flight)
-		time.sleep(1)
-
+import logging
+import os
 
 # Appends flights ICAO present in coordinate space to list
 def flights_in_zone():
-
-	"""
-	top_left = (47.528542, -122.346872)
-	bottom_left = (47.525525, -122.346872)
-	top_right = (47.528542, -122.278043)
-	bottom_right = (47.526126,-122.278043)
-	"""
 
 	top_left = (47.541779, -122.346872)
 	bottom_left = (47.538762, -122.346872)
 	top_right = (47.541779, -122.278043)
 	bottom_right = (47.538762,-122.278043)
-
-
-	"""
-	up/down, left right
-	lat 	,    lon
-	47.540268 -122.317177
-	"""
 
 	flights_in_zone = []
 
@@ -62,7 +36,7 @@ def get_flight_info(icao):
 	r.html.render()
 
 	file = open("output.html", "w")
-	file.write(r.html.html)
+	#file.write(r.html.html)
 	file.close()
 	
 	tree = html.fromstring(r.html.html)
@@ -76,6 +50,11 @@ def get_flight_info(icao):
 	cleaned_source = clean_text(source[0])
 	cleaned_destination = clean_text(destination[0])
 	cleaned_ident = clean_text(flight_ident[0])
+
+	logging.info(cleaned_aircraft)
+	logging.info(cleaned_source)
+	logging.info(cleaned_destination)
+	logging.info(cleaned_ident)
 
 	print(cleaned_ident)
 	print(cleaned_source)
@@ -98,6 +77,24 @@ def clean_text(text):
 	return cleaned_text
 
 
+def main():
+
+
+	# logging setup
+	dirpath = os.path.dirname(os.path.realpath(__file__))
+	logname = 'flights.log'
+	logfile = os.path.join(dirpath, logname)
+	logging.basicConfig(filename=logfile, filemode='w',
+		level=logging.INFO)
+	
+	while(True):
+		flights = flights_in_zone()
+	
+		if flights:
+			for flight in flights:
+				logging.info(flight)
+				get_flight_info(flight)
+		time.sleep(1)
 
 
 if __name__=='__main__':
