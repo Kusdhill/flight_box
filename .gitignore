@@ -1,5 +1,5 @@
 *.mov
 *.txt
-*.html
+output.html
 *.log
 history/
