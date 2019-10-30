@@ -3,26 +3,28 @@
   <head>
     <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css?family=Nunito:300&display=swap" rel="stylesheet">
-    <style>
-      body {
-        font-family: 'Nunito', sans-serif;
-        font-size: 30px;
-        color: white;
-      }
-    </style>
-  <body bgcolor="#000000">
-  
+  <link rel="stylesheet" href="styles.css">  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script type="text/javascript">
 	$(document).ready(function(){
-		$("#text").hide().fadeIn(3000);
+		$(".text").hide().fadeIn(5000);
 	});
   </script>
     </head>
-  <div id="text" class="hidden">
+  <div id="source" class="text">
   	London<br>
 	Heathrow Airport<br>
-	LHR
+	LHR<br>
+  </div>
+  
+  <div id="destination" class="text">
+  Seattle<br>
+  Seatac<br>
+  SEA
+  </div>
+
+  <div id="aircraft" class="text">
+    Boeing 737
   </div>
 
   </body>

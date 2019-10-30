@@ -1,0 +1,22 @@
+body {
+	font-family: 'Nunito', sans-serif;
+	font-size: 30px;
+	color: white;
+	background-color: black;
+}
+
+.text{
+	padding: 10px;
+}
+
+#source{
+	float: left;
+}
+
+#destination{
+	float: right;
+}
+
+#aircraft{
+	text-align: center;
+}
