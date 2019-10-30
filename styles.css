@@ -1,3 +1,8 @@
+html {
+	height: 25%;
+	width: 70%;
+}
+
 body {
 	font-family: 'Nunito', sans-serif;
 	font-size: 30px;
@@ -5,18 +10,18 @@ body {
 	background-color: black;
 }
 
-.text{
+.text {
 	padding: 10px;
 }
 
-#source{
+#source {
 	float: left;
 }
 
-#destination{
+#destination {
 	float: right;
 }
 
-#aircraft{
+#aircraft {
 	text-align: center;
 }
