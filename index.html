@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html>
+ <div id="window">
   <head>
     <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css?family=Nunito:300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/5a5ab16279.js" crossorigin="anonymous"></script>
   <script type="text/javascript">
 	$(document).ready(function(){
 		$(".text").hide().fadeIn(5000);
-    $(".text").fadeOut(5000);
+    //$(".text").fadeOut(5000);
 	});
   </script>
     </head>
+ 
   <div id="source" class="text">
-  	London<br>
-	Heathrow Airport<br>
-	LHR<br>
+    <i class="fas fa-plane-departure"></i>
+  	Tokyo, Japan<br>
+	Narita Int'l
   </div>
   
   <div id="destination" class="text">
-  Seattle<br>
-  Seatac<br>
-  SEA
+    <i class="fas fa-plane-arrival"></i>
+  Seattle, WA<br>
+  Seattle-Tacoma Intl
   </div>
 
   <div id="aircraft" class="text">
-    Boeing 737
+    Delta 166<br>
+    AIRBUS A-330-900
   </div>
+</div>
 
   </body>
 </html>
