@@ -1,11 +1,11 @@
 html {
 	height: 25%;
-	width: 70%;
+	width: 60%;
 }
 
 body {
 	font-family: 'Nunito', sans-serif;
-	font-size: 30px;
+	font-size: 20px;
 	color: white;
 	background-color: black;
 }
@@ -24,4 +24,21 @@ body {
 
 #aircraft {
 	text-align: center;
+}
+
+#image_left {
+	padding: 5px;
+	float: left;
+	padding-top: 2%;
+}
+
+#image_right {
+	padding: 5px;
+	float: right;
+	padding-top: 2%;
+}
+
+#window {
+	border: 1px solid;
+	border-radius: 10px;
 }
