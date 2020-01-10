@@ -52,7 +52,7 @@ def get_flight_info(icao):
 	cleaned_destination = clean_text(destination[0])
 	cleaned_ident = clean_text(flight_ident[0])
 
-	logging.info(cleaned_aircraft,cleaned_source,cleaned_destination,cleaned_ident)
+	logging.info('%s %s %s %s',cleaned_aircraft,cleaned_source,cleaned_destination,cleaned_ident)
 
 	print(cleaned_ident)
 	print(cleaned_source)
@@ -82,12 +82,12 @@ def main():
 	dirpath = os.path.dirname(os.path.realpath(__file__))
 	logname = 'flights.log'
 	logfile = os.path.join(dirpath, logname)
-	logging.basicConfig(filename=logfile, filemode='w',level=logging.INFO)
+	logging.basicConfig(filename=logfile, filemode='w',level=logging.INFO, format='%(asctime)s - %(message)s')
 	
-	logging.info('accd69')
-	get_flight_info('accd69')
+	#logging.info('accd69')
+	#get_flight_info('accd69')
 
-	"""
+	
 	while(True):
 		flights = flights_in_zone()
 	
@@ -96,7 +96,6 @@ def main():
 				logging.info(flight)
 				get_flight_info(flight)
 		time.sleep(1)
-	"""
 
 if __name__=='__main__':
 	main()
